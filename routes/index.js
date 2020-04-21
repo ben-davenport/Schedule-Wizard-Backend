@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index',{});
 });
 
-router.get('/profiles',(req, res, next)=>{
+router.get('/u/profiles',(req, res, next)=>{
   const businessId = 1;
   const getProfilesQuery = `SELECT firstname, lastname, email, admin_user FROM users WHERE business_id=?`
   db.query(getProfilesQuery, [businessId], (err, results)=>{
