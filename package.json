@@ -7,15 +7,15 @@
     "db:reset": "dropdb schedulewizard; bash create-db.sh"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
-    "helmet": "^3.21.2",
+    "helmet": "^3.22.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.3",
     "pg-promise": "^10.5.1"
   }
 }
