@@ -8,6 +8,17 @@ router.get('/', function(req, res, next) {
   res.render('index',{});
 });
 
+router.get('/allshifts', async (req,res,next)=>{
+  const getAllShifts = `SELECT * FROM shift WHERE business_id=1 AND end_time > NOW()`
+  db.any(getAllShifts)
+    .then((results)=>{
+      console.log(results)
+      res.json(results)
+    })
+    .catch(err=>console.log(err))
+})
+
+
 router.get('/profiles', async (req, res, next)=>{
   const businessId = req.params;
   console.log(businessId)
