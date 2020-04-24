@@ -8,9 +8,49 @@ router.get('/', function(req, res, next) {
   res.render('index',{});
 });
 
+router.get('/avilability', async (req, res, next)=>{
+  const getAvailability = `SELECT * FROM is_available WHERE business_id=1`
+  db.any(getAvailability)
+    .then((results)=>{
+      console.log("-------availability------")
+      console.log(results)
+      res.json(results)})
+    .catch(err=>console.log(err))
+})
+
+router.get('/timeoff', async (req, res, next)=>{
+  const getAvailability = `SELECT * FROM timeoff WHERE business_id=1`
+  db.any(getAvailability)
+    .then((results)=>{
+      console.log("-------Time Off------")
+      console.log(results)
+      res.json(results)})
+    .catch(err=>console.log(err))
+})
+
+router.get('/myAvailability', async (req, res, next)=>{
+  const getMyAvailability = `SELECT * FROM is_available WHERE business_id=1 AND user_id=1`
+  db.any(getMyAvailability)
+    .then((results)=>{
+      console.log(results)
+      res.json(results)})
+    .catch(err=>console.log(err))
+})
+
 router.get('/allshifts', async (req,res,next)=>{
-  const getAllShifts = `SELECT * FROM shift WHERE business_id=1 AND end_time > NOW()`
+  const getAllShifts = `SELECT shift.*, users.firstname, users.lastname FROM shift LEFT JOIN users ON shift.user_id = users.id`
   db.any(getAllShifts)
+    .then((results)=>{
+      console.log("-------all shifts------")
+      console.log(results)
+      res.json(results)
+    })
+    .catch(err=>console.log(err))
+})
+
+router.get('/todayshifts', async (req,res,next)=>{
+  const getTodayShifts = `SELECT * FROM shift WHERE business_id=1 AND start_time = current_date`
+  db.any(getTodayShifts)
     .then((results)=>{
       console.log(results)
       res.json(results)
