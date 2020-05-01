@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../db');
+const bcrypt = require('bcryptjs');
+const randToken = require('rand-token');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

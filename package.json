@@ -7,6 +7,7 @@
     "db:reset": "dropdb schedulewizard; bash create-db.sh"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -16,6 +17,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.3",
-    "pg-promise": "^10.5.1"
+    "pg-promise": "^10.5.1",
+    "rand-token": "^1.0.1"
   }
 }
