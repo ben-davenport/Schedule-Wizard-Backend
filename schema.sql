@@ -11,7 +11,8 @@ create table users(
     lastname varchar not null,
     email varchar(50) not null,
     business_id integer references business(id),
-    is_admin boolean default false
+    is_admin boolean default false,
+    token varchar(50) DEFAULT null,
 );
 
 create table shift(
