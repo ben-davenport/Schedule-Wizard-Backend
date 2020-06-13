@@ -10,6 +10,7 @@ create table users(
     firstname varchar not null,
     lastname varchar not null,
     email varchar(50) not null,
+    pw varchar(50) not null,
     business_id integer references business(id),
     is_admin boolean default false,
     token varchar(50) DEFAULT null,

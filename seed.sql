@@ -6,12 +6,12 @@ VALUES
 ;
 
 insert into users
-    (firstname, lastname, email, business_id, is_admin)
+    (firstname, lastname, email, pw, business_id, is_admin)
 VALUES
-    ('Joe', 'Noto', 'atv@octane.com', 1, FALSE),
-    ('Andrew', 'Mickney', 'westside@octane.com', 1, TRUE),
-    ('Chris', 'Wallace','thebox@brash.com', 2, TRUE),
-    ('Hannah', 'Banana', 'hannah@brash.com', 2, FALSE)
+    ('Joe', 'Noto', 'atv@octane.com','12345', 1, FALSE),
+    ('Andrew', 'Mickney', 'westside@octane.com','12345', 1, TRUE),
+    ('Chris', 'Wallace','thebox@brash.com','12345', 2, TRUE),
+    ('Hannah', 'Banana', 'hannah@brash.com','12345', 2, FALSE) 
 ;
 
 INSERT into shift
