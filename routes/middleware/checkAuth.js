@@ -2,7 +2,7 @@ const express = require('express')
 
 
 const checkAuth = async (req, res, next)=>{
-    const accessToken = req.cookies.accessToken;
+    const accessToken = req.cookies.accessTokenBD;
 
     if(accessToken){
         res.locals.accessToken = accessToken;

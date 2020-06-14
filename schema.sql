@@ -5,15 +5,15 @@ create table business(
     business_email varchar
 );
 
-create table users( 
+create table users(
     id serial primary key,
     firstname varchar not null,
     lastname varchar not null,
     email varchar(50) not null,
-    pw varchar(50) not null,
+    pw varchar(60) not null,
     business_id integer references business(id),
     is_admin boolean default false,
-    token varchar(50) DEFAULT null,
+    token varchar(50) DEFAULT null
 );
 
 create table shift(

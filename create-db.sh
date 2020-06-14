@@ -1,4 +1,4 @@
-dropdb schedulewizard
+dropdb -p 5432 schedulewizard
 createdb schedulewizard
 
 psql -f schema.sql schedulewizard
